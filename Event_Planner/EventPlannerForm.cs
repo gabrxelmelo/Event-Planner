@@ -24,8 +24,8 @@ namespace Event_Planner
         private EventRecord selectedProduct;
         private void DisplayEvent()
         {
-            Upcoming.Columns.Clear();
-            Upcoming.DataSource = new BindingList<EventRecord>(this.events.ToList());
+            upcomingDataGridView.Columns.Clear();
+            upcomingDataGridView.DataSource = new BindingList<EventRecord>(this.events.ToList());
 
             
             // add column for delete button
@@ -35,36 +35,36 @@ namespace Event_Planner
                 HeaderText = "",
                 Text = "Delete"
             };
-            Upcoming.Columns.Add(deleteColumn);
+            upcomingDataGridView.Columns.Add(deleteColumn);
 
             // format the column header
             //dgvProducts.EnableHeadersVisualStyles = false;
             //dgvProducts.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-            Upcoming.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
-            Upcoming.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            upcomingDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
+            upcomingDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
 
             // format the first column
-            Upcoming.Columns[0].HeaderText = "Location";
-            Upcoming.Columns[0].Width = 110;
+            upcomingDataGridView.Columns[0].HeaderText = "Location";
+            upcomingDataGridView.Columns[0].Width = 110;
 
             // format the second column
-            Upcoming.Columns[3].HeaderText = "Date";
-            Upcoming.Columns[3].Width = 90;
+            upcomingDataGridView.Columns[3].HeaderText = "Date";
+            upcomingDataGridView.Columns[3].Width = 90;
 
 
             // format the third column
-            Upcoming.Columns[2].HeaderText = "Name";
-            Upcoming.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Upcoming.Columns[2].Width = 90;
-            Upcoming.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            upcomingDataGridView.Columns[2].HeaderText = "Name";
+            upcomingDataGridView.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            upcomingDataGridView.Columns[2].Width = 90;
+            upcomingDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             // format the forth column
-            Upcoming.Columns[1].HeaderText = "Budget";
-            Upcoming.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Upcoming.Columns[1].Width = 90;
-            Upcoming.Columns[1].DefaultCellStyle.Format = "c";
-            Upcoming.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            upcomingDataGridView.Columns[1].HeaderText = "Budget";
+            upcomingDataGridView.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            upcomingDataGridView.Columns[1].Width = 90;
+            upcomingDataGridView.Columns[1].DefaultCellStyle.Format = "c";
+            upcomingDataGridView.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         public void LoadEvent()
@@ -104,16 +104,16 @@ namespace Event_Planner
             // store index values for Modify and Delete button column
             
             
-            const int DeleteIndex = 4;
+            const int deleteColumIndex = 0;
 
-            if (e.ColumnIndex == DeleteIndex)
+            if (e.ColumnIndex == deleteColumIndex)
             {
-                string location = Upcoming.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
+                string location = upcomingDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString().Trim();
                 selectedProduct = GetEvent(location);
             }
 
             
-            if (e.ColumnIndex == DeleteIndex)
+            if (e.ColumnIndex == deleteColumIndex)
             {
                 DeleteProduct();
             }
@@ -161,5 +161,9 @@ namespace Event_Planner
             MessageBox.Show(ex.Message, ex.GetType().ToString());
         }
 
+        private void deleteBut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
