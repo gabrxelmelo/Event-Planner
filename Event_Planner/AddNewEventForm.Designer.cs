@@ -155,11 +155,11 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 17;
             // 
-            // AddNewEvent
+            // AddNewEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1821, 848);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.addCancel);
@@ -173,7 +173,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AddNewEvent";
+            this.Name = "AddNewEventForm";
             this.Text = "AddNewEvent";
             ((System.ComponentModel.ISupportInitialize)(this.budNum)).EndInit();
             this.ResumeLayout(false);

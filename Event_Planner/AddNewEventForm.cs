@@ -13,11 +13,11 @@ namespace Event_Planner
     public partial class AddNewEventForm : Form
     {
 
-        public List<GuestList> guest = new List<GuestList>();
+        public List<Guest> guestList = new List<Guest>();
         public List<EventRecord> events= new List<EventRecord>();
-        public AddNewEventForm(List<EventRecord> List)
+        public AddNewEventForm(List<EventRecord> events)
         {
-            events= List;
+            this.events= events;
             InitializeComponent();
         }
 
@@ -29,23 +29,29 @@ namespace Event_Planner
         
         private void addPpl_Click(object sender, EventArgs e)
         {
-            GuestList guestlist = new GuestList();
-            GuestListForm guestList = new GuestListForm(guestlist);
-            DialogResult selectedButton = guestList.ShowDialog();
+            Guest guest = new Guest();
+            GuestListForm guestListForm = new GuestListForm(guest);
+            DialogResult selectedButton = guestListForm.ShowDialog();
             if (selectedButton == DialogResult.OK)
             {
-                guest.Clear();
-                guest.Add(guestlist);
-                guest.ForEach(g => textBox1.Text += g.Print() + "\n") ;
+                this.guestList.Clear();
+                this.guestList.Add(guest);
+                DisplayGuests();
 
             }
-           
+
         }
-        private GuestList list = null;
-        public GuestList GetNew()
+
+        private void DisplayGuests()
+        {
+            this.guestList.ForEach(guest => textBox1.Text += guest.Name + "\n");
+        }
+
+        private Guest newGuest = null;
+        public Guest GetNew()
         {
             this.ShowDialog();
-            return list;
+            return newGuest;
         }
 
         private void addSave_Click(object sender, EventArgs e)

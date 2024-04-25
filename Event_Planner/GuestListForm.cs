@@ -13,8 +13,8 @@ namespace Event_Planner
     public partial class GuestListForm : Form
     {
 
-        GuestList guestList;
-        public GuestListForm(GuestList guestList)
+        Guest guestList;
+        public GuestListForm(Guest guestList)
         {
             this.guestList = guestList;
             InitializeComponent();

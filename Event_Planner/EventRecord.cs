@@ -8,7 +8,7 @@ namespace Event_Planner
 {
     public class EventRecord
     {
-        public List<GuestList> guest_Lists = new List<GuestList>();
+        public List<Guest> guest_Lists = new List<Guest>();
         public string Location { get; set; }
         public decimal budget { get; set; }
         public string name { get; set; }

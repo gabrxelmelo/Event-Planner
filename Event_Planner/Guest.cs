@@ -6,24 +6,15 @@ using System.Threading.Tasks;
 
 namespace Event_Planner
 {
-    public class GuestList
+    public class Guest
     {
 
         public string Name { get; set; }
 
 
-        public GuestList(string name)
+        public Guest(string name)
         {
             Name = name;
-        }
-
-        public GuestList()
-        {
-
-        }
-        public string Print()
-        { 
-            return "# " + Name + "\n";
         }
     }
 }

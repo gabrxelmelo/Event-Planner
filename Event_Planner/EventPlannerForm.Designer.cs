@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.addBut = new System.Windows.Forms.Button();
-            this.deleteBut = new System.Windows.Forms.Button();
             this.closeBut = new System.Windows.Forms.Button();
             this.upcomingDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.upcomingDataGridView)).BeginInit();
@@ -47,7 +46,7 @@
             // 
             // addBut
             // 
-            this.addBut.Location = new System.Drawing.Point(574, 79);
+            this.addBut.Location = new System.Drawing.Point(885, 63);
             this.addBut.Name = "addBut";
             this.addBut.Size = new System.Drawing.Size(110, 77);
             this.addBut.TabIndex = 2;
@@ -55,19 +54,9 @@
             this.addBut.UseVisualStyleBackColor = true;
             this.addBut.Click += new System.EventHandler(this.addBut_Click);
             // 
-            // deleteBut
-            // 
-            this.deleteBut.Location = new System.Drawing.Point(574, 191);
-            this.deleteBut.Name = "deleteBut";
-            this.deleteBut.Size = new System.Drawing.Size(110, 77);
-            this.deleteBut.TabIndex = 3;
-            this.deleteBut.Text = "Delete";
-            this.deleteBut.UseVisualStyleBackColor = true;
-            this.deleteBut.Click += new System.EventHandler(this.deleteBut_Click);
-            // 
             // closeBut
             // 
-            this.closeBut.Location = new System.Drawing.Point(574, 299);
+            this.closeBut.Location = new System.Drawing.Point(885, 283);
             this.closeBut.Name = "closeBut";
             this.closeBut.Size = new System.Drawing.Size(110, 77);
             this.closeBut.TabIndex = 4;
@@ -75,13 +64,13 @@
             this.closeBut.UseVisualStyleBackColor = true;
             this.closeBut.Click += new System.EventHandler(this.closeBut_Click);
             // 
-            // Upcoming
+            // upcomingDataGridView
             // 
             this.upcomingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.upcomingDataGridView.Location = new System.Drawing.Point(24, 79);
-            this.upcomingDataGridView.Name = "Upcoming";
+            this.upcomingDataGridView.Name = "upcomingDataGridView";
             this.upcomingDataGridView.RowHeadersWidth = 62;
-            this.upcomingDataGridView.Size = new System.Drawing.Size(444, 297);
+            this.upcomingDataGridView.Size = new System.Drawing.Size(751, 297);
             this.upcomingDataGridView.TabIndex = 5;
             this.upcomingDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Upcoming_CellContentClick);
             // 
@@ -89,10 +78,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 454);
+            this.ClientSize = new System.Drawing.Size(1121, 475);
             this.Controls.Add(this.upcomingDataGridView);
             this.Controls.Add(this.closeBut);
-            this.Controls.Add(this.deleteBut);
             this.Controls.Add(this.addBut);
             this.Controls.Add(this.label1);
             this.Name = "EventPlannerForm";
@@ -106,7 +94,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addBut;
-        private System.Windows.Forms.Button deleteBut;
         private System.Windows.Forms.Button closeBut;
         private System.Windows.Forms.DataGridView upcomingDataGridView;
     }
