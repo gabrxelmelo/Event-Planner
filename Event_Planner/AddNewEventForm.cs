@@ -13,7 +13,7 @@ namespace Event_Planner
     public partial class AddNewEventForm : Form
     {
 
-        public List<Guest> guestList = new List<Guest>();
+        public List<Guest> guests = new List<Guest>();
         public List<EventRecord> events= new List<EventRecord>();
         public AddNewEventForm(List<EventRecord> events)
         {
@@ -34,9 +34,8 @@ namespace Event_Planner
             DialogResult selectedButton = guestListForm.ShowDialog();
             if (selectedButton == DialogResult.OK)
             {
-                this.guestList.Clear();
-                this.guestList.Add(guest);
-                DisplayGuests();
+                this.guests.Add(guest);
+               DisplayGuests();
 
             }
 
@@ -44,7 +43,9 @@ namespace Event_Planner
 
         private void DisplayGuests()
         {
-            this.guestList.ForEach(guest => textBox1.Text += guest.Name + "\n");
+            //this.guestsListBox.Items.Clear();
+            guestsListBox.DataSource= new BindingList<Guest>(this.guests);
+            guestsListBox.DisplayMember= "Name";
         }
 
         private Guest newGuest = null;
@@ -66,6 +67,16 @@ namespace Event_Planner
             events.Add(eventRecord);
             
             this.Close();
+        }
+
+        private void delPpl_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = guestsListBox.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                guests.RemoveAt(selectedIndex);
+                this.DisplayGuests();
+            }
         }
     }
 }

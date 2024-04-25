@@ -11,6 +11,7 @@ namespace Event_Planner
 
         public string Name { get; set; }
 
+        public Guest() { }
 
         public Guest(string name)
         {

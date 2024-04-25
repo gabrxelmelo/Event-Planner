@@ -39,8 +39,8 @@
             this.delPpl = new System.Windows.Forms.Button();
             this.addSave = new System.Windows.Forms.Button();
             this.addCancel = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.guestsListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.budNum)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,10 +115,11 @@
             // 
             this.delPpl.Location = new System.Drawing.Point(500, 112);
             this.delPpl.Name = "delPpl";
-            this.delPpl.Size = new System.Drawing.Size(93, 36);
+            this.delPpl.Size = new System.Drawing.Size(148, 36);
             this.delPpl.TabIndex = 13;
-            this.delPpl.Text = "Delete Guests";
+            this.delPpl.Text = "Delete selected Guest";
             this.delPpl.UseVisualStyleBackColor = true;
+            this.delPpl.Click += new System.EventHandler(this.delPpl_Click);
             // 
             // addSave
             // 
@@ -140,14 +141,6 @@
             this.addCancel.UseVisualStyleBackColor = true;
             this.addCancel.Click += new System.EventHandler(this.addCancel_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(635, 49);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 238);
-            this.textBox1.TabIndex = 16;
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(122, 207);
@@ -155,13 +148,21 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 17;
             // 
+            // guestsListBox
+            // 
+            this.guestsListBox.FormattingEnabled = true;
+            this.guestsListBox.Location = new System.Drawing.Point(754, 64);
+            this.guestsListBox.Name = "guestsListBox";
+            this.guestsListBox.Size = new System.Drawing.Size(281, 277);
+            this.guestsListBox.TabIndex = 19;
+            // 
             // AddNewEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1821, 848);
+            this.Controls.Add(this.guestsListBox);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.addCancel);
             this.Controls.Add(this.addSave);
             this.Controls.Add(this.delPpl);
@@ -194,7 +195,7 @@
         private System.Windows.Forms.Button delPpl;
         private System.Windows.Forms.Button addSave;
         private System.Windows.Forms.Button addCancel;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ListBox guestsListBox;
     }
 }

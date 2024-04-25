@@ -65,7 +65,7 @@
     <Compile Include="GuestList.Designer.cs">
       <DependentUpon>GuestListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GuestList.cs" />
+    <Compile Include="Guest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddNewEventForm.resx">
