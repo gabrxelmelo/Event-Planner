@@ -16,7 +16,7 @@ namespace Event_Planner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EventPlanner());
+            Application.Run(new EventPlannerForm());
         }
     }
 }

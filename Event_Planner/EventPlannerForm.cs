@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Event_Planner
 {
-    public partial class EventPlanner : Form
+    public partial class EventPlannerForm : Form
     {
-        EventRecord addEvent;
+        public EventRecord EventRecord { get; set; }
 
         List<EventRecord> events = new List<EventRecord>();
-        public EventPlanner()
+        public EventPlannerForm()
         {
             InitializeComponent();
             LoadEvent();
@@ -82,8 +82,14 @@ namespace Event_Planner
         }
         private void addBut_Click(object sender, EventArgs e)
         {
-            AddNewEvent addNewEvent = new AddNewEvent(events);
-            addNewEvent.ShowDialog();
+            AddNewEventForm addNewEventForm = new AddNewEventForm(events);
+
+            DialogResult dialogResult = addNewEventForm.ShowDialog();
+            {
+                DisplayEvent();
+
+            }
+           
             
         }
 

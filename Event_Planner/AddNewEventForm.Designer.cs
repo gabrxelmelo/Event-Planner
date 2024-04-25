@@ -1,6 +1,6 @@
 ﻿namespace Event_Planner
 {
-    partial class AddNewEvent
+    partial class AddNewEventForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,41 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Event_Planner
 {
-    public partial class GuestList : Form
+    public class GuestList
     {
 
-        guest_list list;
-        public GuestList(guest_list g)
+        public string Name { get; set; }
+
+
+        public GuestList(string name)
         {
-            this.list = g;
-            InitializeComponent();
+            Name = name;
         }
 
-        private void cancelBut_Click(object sender, EventArgs e)
+        public GuestList()
         {
-            this.Close();
+
         }
-
-        private void addBut_Click(object sender, EventArgs e)
-        {
-            string name; 
-
-            name = fnameText.Text + " " + lnameText.Text + "\n";
-            list.Name = name;
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-
-
+        public string Print()
+        { 
+            return "# " + Name + "\n";
         }
     }
 }

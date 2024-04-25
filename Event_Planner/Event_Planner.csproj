@@ -47,35 +47,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventRecord.cs" />
-    <Compile Include="AddNewEvent.cs">
+    <Compile Include="AddNewEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewEvent.Designer.cs">
-      <DependentUpon>AddNewEvent.cs</DependentUpon>
+    <Compile Include="AddNewEventForm.Designer.cs">
+      <DependentUpon>AddNewEventForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventPlanner.cs">
+    <Compile Include="EventPlannerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventPlanner.Designer.cs">
-      <DependentUpon>EventPlanner.cs</DependentUpon>
+    <Compile Include="EventPlannerForm.Designer.cs">
+      <DependentUpon>EventPlannerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GuestList.cs">
+    <Compile Include="GuestListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GuestList.Designer.cs">
-      <DependentUpon>GuestList.cs</DependentUpon>
+      <DependentUpon>GuestListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="guest_list.cs" />
+    <Compile Include="GuestList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddNewEvent.resx">
-      <DependentUpon>AddNewEvent.cs</DependentUpon>
+    <EmbeddedResource Include="AddNewEventForm.resx">
+      <DependentUpon>AddNewEventForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventPlanner.resx">
-      <DependentUpon>EventPlanner.cs</DependentUpon>
+    <EmbeddedResource Include="EventPlannerForm.resx">
+      <DependentUpon>EventPlannerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuestList.resx">
-      <DependentUpon>GuestList.cs</DependentUpon>
+      <DependentUpon>GuestListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

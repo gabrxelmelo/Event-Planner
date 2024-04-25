@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace Event_Planner
 {
-    public partial class AddNewEvent : Form
+    public partial class AddNewEventForm : Form
     {
-        EventRecord addEvent = new EventRecord();
 
-        public List<guest_list> guest = new List<guest_list>();
+        public List<GuestList> guest = new List<GuestList>();
         public List<EventRecord> events= new List<EventRecord>();
-        public AddNewEvent(List<EventRecord> List)
+        public AddNewEventForm(List<EventRecord> List)
         {
             events= List;
             InitializeComponent();
@@ -30,8 +29,8 @@ namespace Event_Planner
         
         private void addPpl_Click(object sender, EventArgs e)
         {
-            guest_list guestlist = new guest_list();
-            GuestList guestList = new GuestList(guestlist);
+            GuestList guestlist = new GuestList();
+            GuestListForm guestList = new GuestListForm(guestlist);
             DialogResult selectedButton = guestList.ShowDialog();
             if (selectedButton == DialogResult.OK)
             {
@@ -42,8 +41,8 @@ namespace Event_Planner
             }
            
         }
-        private guest_list list = null;
-        public guest_list GetNew()
+        private GuestList list = null;
+        public GuestList GetNew()
         {
             this.ShowDialog();
             return list;
@@ -51,11 +50,14 @@ namespace Event_Planner
 
         private void addSave_Click(object sender, EventArgs e)
         {
+            EventRecord eventRecord = new EventRecord();
 
-            addEvent.Location = locText.Text;
-            addEvent.budget = budNum.Value;
-            addEvent.name = hostText.Text;
-            addEvent.Date = dateTimePicker1.Value;
+            eventRecord.Location = locText.Text;
+            eventRecord.budget = budNum.Value;
+            eventRecord.name = hostText.Text;
+            eventRecord.Date = dateTimePicker1.Value;
+
+            events.Add(eventRecord);
             
             this.Close();
         }
